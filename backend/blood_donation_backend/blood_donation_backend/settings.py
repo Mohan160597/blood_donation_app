@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     
     # Local apps
     'accounts',  
+
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -61,6 +63,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'blood_donation_backend.urls'
@@ -139,3 +145,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True  # For testing, allow all origins. Restrict this in production.
+
+ALLOWED_HOSTS = ['192.168.63.11', 'localhost', '127.0.0.1']

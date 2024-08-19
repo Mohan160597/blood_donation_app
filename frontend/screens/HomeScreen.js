@@ -6,12 +6,12 @@ export default function HomePage({ navigation }) {
     <View style={styles.container}>
       <Button
         title="Donor"
-        onPress={() => navigation.navigate('Login', { role: 'donor' })}
+        onPress={() => navigation.navigate('DonorLogin', { role: 'donor' })}
       />
       <View style={styles.gap} />
       <Button
         title="Delivery Staff"
-        onPress={() => navigation.navigate('Login', { role: 'deliveryStaff' })}
+        onPress={() => navigation.navigate('DeliveryStaffLogin', { role: 'deliveryStaff' })}
         style={styles.button}
       />
     </View>
